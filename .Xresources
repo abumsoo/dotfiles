@@ -1,0 +1,38 @@
+Xresources
+
+[colors]
+urxvt*foreground: #839496
+urxvt*background: #09090d
+urxvt*cursor: #839496
+
+!black
+urxvt*color0: #353540
+urxvt*color8: #545466
+!red
+urxvt*color1: #8c5760
+urxvt*color9: #b26f7a
+!green
+urxvt*color2: #7b8c58
+urxvt*color10: #9db270
+!yellow
+urxvt*color3: #8c6e43
+urxvt*color11: #b28c55
+!blue
+urxvt*color4: #58698c
+urxvt*color12: #7086b2
+!magenta
+urxvt*color5: #7b5e7d
+urxvt*color13: #9c77b2
+!cyan
+urxvt*color6: #66808c
+urxvt*color14: #82a2b2
+!white
+urxvt*color7: #8c8b8b
+urxvt*color15: #b8b8c8
+
+urxvt.font: xft:bitstream vera sans mono:size=10:antialias=true
+urxvt.boldFont: xft:bitstream vera sans mono:bold:size=10:antialias=true
+urxvt.letterSpace: -1
+*scrollBar: false
+urxvt*internalBorder: 2
+urxvt*externalBorder: 2
