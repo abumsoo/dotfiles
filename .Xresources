@@ -1,38 +1,61 @@
-Xresources
+!Xresources
 
-[colors]
-urxvt*foreground: #839496
-urxvt*background: #09090d
-urxvt*cursor: #839496
+!URxvt.background: #1d1d1d
+!URxvt.foreground: #f3f4f3
+!URxvt.cursorColor: #9d5d44
 
-!black
-urxvt*color0: #353540
-urxvt*color8: #545466
-!red
-urxvt*color1: #8c5760
-urxvt*color9: #b26f7a
-!green
-urxvt*color2: #7b8c58
-urxvt*color10: #9db270
-!yellow
-urxvt*color3: #8c6e43
-urxvt*color11: #b28c55
-!blue
-urxvt*color4: #58698c
-urxvt*color12: #7086b2
-!magenta
-urxvt*color5: #7b5e7d
-urxvt*color13: #9c77b2
-!cyan
-urxvt*color6: #66808c
-urxvt*color14: #82a2b2
-!white
-urxvt*color7: #8c8b8b
-urxvt*color15: #b8b8c8
+URxvt.scrollBar: false
 
-urxvt.font: xft:bitstream vera sans mono:size=10:antialias=true
-urxvt.boldFont: xft:bitstream vera sans mono:bold:size=10:antialias=true
-urxvt.letterSpace: -1
-*scrollBar: false
-urxvt*internalBorder: 2
-urxvt*externalBorder: 2
+URxvt.font: xft:Droid Sans Mono for Powerline:pixelsize=14
+URxvt.letterSpace: -1
+
+! Base16 Default
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+#define base00 #181818
+#define base01 #282828
+#define base02 #383838
+#define base03 #585858
+#define base04 #b8b8b8
+#define base05 #d8d8d8
+#define base06 #e8e8e8
+#define base07 #f8f8f8
+#define base08 #ab4642
+#define base09 #dc9656
+#define base0A #f7ca88
+#define base0B #a1b56c
+#define base0C #86c1b9
+#define base0D #7cafc2
+#define base0E #ba8baf
+#define base0F #a16946
+
+URxvt.foreground:   base02
+URxvt.background:   base07
+URxvt.cursorColor:  base02
+
+URxvt.color0:       base00
+URxvt.color1:       base08
+URxvt.color2:       base0B
+URxvt.color3:       base0A
+URxvt.color4:       base0D
+URxvt.color5:       base0E
+URxvt.color6:       base0C
+URxvt.color7:       base05
+
+URxvt.color8:       base03
+URxvt.color9:       base08
+URxvt.color10:      base0B
+URxvt.color11:      base0A
+URxvt.color12:      base0D
+URxvt.color13:      base0E
+URxvt.color14:      base0C
+URxvt.color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+URxvt.color16:      base09
+URxvt.color17:      base0F
+URxvt.color18:      base01
+URxvt.color19:      base02
+URxvt.color20:      base04
+URxvt.color21:      base06

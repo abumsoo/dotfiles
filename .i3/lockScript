@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+randomPape=`find $HOME/Pictures/wallpapers/pngPapes|shuf|head -n 1`
+
+i3lock -t -i $randomPape
