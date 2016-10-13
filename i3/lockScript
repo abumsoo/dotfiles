@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+randomPape=`find $HOME/Pictures/wallpapers/pngPapes -maxdepth 1|shuf|head -n 1`
+randomPape2=`find $HOME/Pictures/wallpapers/pngPapes -maxdepth 1|shuf|head -n 1`
+# randomPape3=`find $HOME/Pictures/wallpapers/pngPapes/vertical|shuf|head -n 1`
+
+convert $randomPape $randomPape2 +append $HOME/Pictures/wallpapers/pngPapes/bigPape.png
+bigPape=$HOME/Pictures/wallpapers/pngPapes/bigPape.png
+
+i3lock -t -i $bigPape
+
+rm $bigPape

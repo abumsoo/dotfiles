@@ -1,37 +1,35 @@
 !Xresources
 
-!URxvt.background: #1d1d1d
-!URxvt.foreground: #f3f4f3
-!URxvt.cursorColor: #9d5d44
-
 URxvt.scrollBar: false
 
-URxvt.font: xft:Droid Sans Mono for Powerline:pixelsize=14
+URxvt.font: xft:Droid Sans Mono for Powerline:pixelsize=14,
+            xft:Kochi Gothic:antialias=false
+
 URxvt.letterSpace: -1
 
-! Base16 Default
-! Scheme: Chris Kempson (http://chriskempson.com)
+! Base16 Solarized Light
+! Scheme: Ethan Schoonover (http://ethanschoonover.com/solarized)
 
-#define base00 #181818
-#define base01 #282828
-#define base02 #383838
-#define base03 #585858
-#define base04 #b8b8b8
-#define base05 #d8d8d8
-#define base06 #e8e8e8
-#define base07 #f8f8f8
-#define base08 #ab4642
-#define base09 #dc9656
-#define base0A #f7ca88
-#define base0B #a1b56c
-#define base0C #86c1b9
-#define base0D #7cafc2
-#define base0E #ba8baf
-#define base0F #a16946
+#define base00 #fdf6e3
+#define base01 #eee8d5
+#define base02 #93a1a1
+#define base03 #839496
+#define base04 #657b83
+#define base05 #586e75
+#define base06 #073642
+#define base07 #002b36
+#define base08 #dc322f
+#define base09 #cb4b16
+#define base0A #b58900
+#define base0B #859900
+#define base0C #2aa198
+#define base0D #268bd2
+#define base0E #6c71c4
+#define base0F #d33682
 
-URxvt.foreground:   base02
-URxvt.background:   base07
-URxvt.cursorColor:  base02
+URxvt.foreground:   base05
+URxvt.background:   base00
+URxvt.cursorColor:  base05
 
 URxvt.color0:       base00
 URxvt.color1:       base08

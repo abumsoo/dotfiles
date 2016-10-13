@@ -7,14 +7,17 @@
        "height": 1060,
        "width": 1920,
        "x": 0,
-       "y": 20
+       "y": 0
     },
     "name": "i3: Layout saving in i3 - Chromium",
     "percent": 1,
     "swallows": [
        {
-        "class": "^chromium$",
-        "window_role": "^browser$"
+       "class": "^chromium$",
+       "instance": "^chromium$",
+       // "title": "^i3\\:\\ Layout\\ saving\\ in\\ i3\\ \\-\\ Chromium$",
+       // "transient_for": "^$",
+       "window_role": "^browser$"
        }
     ],
     "type": "con"

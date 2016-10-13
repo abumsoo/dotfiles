@@ -15,13 +15,19 @@ fi
 xrdb -load ~/.Xresources
 
 # Dual monitor setup
-xrandr --output HDMI-0 --right-of DVI-1
+xrandr --output DVI-0 --right-of DVI-1
 
 # Start background
 systemctl --user start feh-wallpaper.service
 
 # Autostart Dropbox
 dropbox start
+
+# Japanese input
+export GTK_IM_MODULE='uim'
+export QT_IM_MODULE='uim'
+uim-xim &
+export XMODIFIERS='@im=uim'
 
 # Turn off screensaver, dimmer, etc.
 xset s off

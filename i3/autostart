@@ -37,14 +37,12 @@ StartProg()
 # |__________|__________|
 
 
-StartProg emacsclient -c
+StartProg emacsclient
 i3-msg split h
-sleep 1
+sleep 2
 
 StartProg urxvt
 # i3-msg split v
-sleep 1
-
-# StartProg urxvt
+sleep 5
 
 exit 0

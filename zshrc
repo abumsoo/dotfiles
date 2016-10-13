@@ -11,7 +11,7 @@ ZSH_THEME="agnoster"
 DEFAULT_USER='bumshakabum'
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-default.light.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.light.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Uncomment the following line to use case-sensitive completion.
@@ -81,6 +81,9 @@ fi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# start keychain
+eval $(keychain --eval --quiet id_rsa)
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -92,15 +95,7 @@ fi
 
 # Use open emacs window
 alias ec="emacsclient -n"
-
-# Taskwarrior configurations
-alias tw='task list'
-alias twa='task add'
-alias twmod='task modify'
-alias tday='task +daily'
-alias tweek='task +weekly'
-alias tmonth='task +monthly'
-alias tdwk='task +daily +weekly list'
+alias matlabc='matlab -nodesktop -nosplash'
 
 # Git add, commit, and push in one command
 lazygit() {

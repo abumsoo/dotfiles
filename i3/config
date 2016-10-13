@@ -129,12 +129,12 @@ bindsym $mod+shift+x exec /home/bumshakabum/.i3/lockScript
 workspace 1 output DVI-1
 workspace 2 output DVI-1
 workspace 3 output DVI-1
-workspace 4 output DVI-1
-workspace 5 output DVI-1
-workspace 7 output HDMI-0
-workspace 8 output HDMI-0
-workspace 9 output HDMI-0
-workspace 10 output HDMI-0
+# workspace 4 output DVI-1
+# workspace 5 output DVI-1
+workspace 10 output DVI-0
+workspace 7 output DVI-0
+workspace 8 output DVI-0
+workspace 9 output DVI-0
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -231,13 +231,10 @@ bar {
     separator_symbol""
 }
 
-# Use i3 saved layouts
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/bumshakabum/.i3/workspace-1.json'"
-#exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/bumshakabum/.i3/workspace-7.json'"
+# Use i3 saved layouts. Order matters
 
 # Autostarting programs
-exec --no-startup-id i3-msg 'exec chromium'
-#exec --no-startup-id i3-msg 'workspace 2; exec /home/bumshakabum/.i3/autostart'
+exec --no-startup-id i3-msg "exec /home/bumshakabum/.i3/load_layout.sh"
 
 # Start compton with config file in ~/.config/compton.conf
 exec_always --no-startup-id compton 
