@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 i3-msg "workspace 1; append_layout ~/.i3/text-edit.json"
-(emacsclient -c ~/gitrepos/notProgramming/todo.org &)
+(emacsclient -c ~/gitrepos/notProgramming/goals.org &)
 
 sleep 1
 
