@@ -97,6 +97,7 @@ eval $(keychain --eval --quiet id_rsa)
 alias ec="emacsclient -n"
 alias matlabc='matlab -nodesktop -nosplash'
 alias tasks='task next -work'
+alias task='task'
 
 # Git add, commit, and push in one command
 lazygit() {
