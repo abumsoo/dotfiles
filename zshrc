@@ -11,7 +11,7 @@ ZSH_THEME="agnoster"
 DEFAULT_USER='bumshakabum'
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.light.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Uncomment the following line to use case-sensitive completion.
@@ -101,5 +101,11 @@ alias matlabc='matlab -nodesktop -nosplash'
 lazygit() {
     git add .
     git commit -a -m "$1"
+    git push
+}
+
+lazytask() {
+    git add .
+    git commit -a -m "tasks"
     git push
 }

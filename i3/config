@@ -120,7 +120,7 @@ hide_edge_borders both
 # Create gaps between windows
 gaps inner 10
 # gaps outer 5
-smart_gaps on
+# smart_gaps on
 
 # i3lock shortcut with image
 bindsym $mod+shift+x exec /home/bumshakabum/.i3/lockScript
@@ -178,8 +178,8 @@ set $darkred            #A54242
 set $green              #B5BD56
 
 #class                  border      backgr.     text        split
-client.focused          $green     $green       $black      $red
-client.focused_inactive $grey       $grey       $lightgrey  $grey
+client.focused          $lightgrey  $lightgrey  $black      $lightgrey
+client.focused_inactive $lightgrey  $lightgrey  $lightgrey  $lightgrey
 client.unfocused        $grey       $grey       $lightgrey  $grey
 client.urgent           $red        $red        $black      $red
 client.background       $back
@@ -215,14 +215,14 @@ bindsym $mod+p mode "resize"
 bar {
     status_command $HOME/.config/conky-i3bar
     colors {
-           background #efefef
+           background #000000 #efefef
            statusline #999999
-           separator  #55bbdd
+           separator  #5588dd
            #name              #outline   #background   #foreground
-           focused_workspace  #afafaf    #606060       #afafaf
-           active_workspace   #4f4f4f    #c1c1c1       #808080
-           inactive_workspace #5f5f5f    #efefef       #999999
-           urgent_workspace   #2f343a    #900000       #ffffff
+           focused_workspace  #afafaf    #505050       #afafaf
+           active_workspace   #4f4f4f    #404040       #a0a0a0
+           inactive_workspace #5f5f5f    #202020       #999999
+           urgent_workspace   #2f343a    #550000       #ffffff
     }
     # status_command i3status
     # position top
@@ -231,7 +231,8 @@ bar {
     separator_symbol""
 }
 
-# Use i3 saved layouts. Order matters
+# Open terminals in floating mode
+# for_window [class="URxvt"] floating enable
 
 # Autostarting programs
 exec --no-startup-id i3-msg "exec /home/bumshakabum/.i3/load_layout.sh"
