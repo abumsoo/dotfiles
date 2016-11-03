@@ -216,7 +216,7 @@ bindsym $mod+p mode "resize"
 bar {
     status_command $HOME/.config/conky-i3bar
     colors {
-           background #000000 #efefef
+           background #000000
            statusline #999999
            separator  #5588dd
            #name              #outline   #background   #foreground
