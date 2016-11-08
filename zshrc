@@ -96,6 +96,10 @@ eval $(keychain --eval --quiet id_rsa)
 # Use open emacs window
 alias ec="emacsclient -n"
 alias matlabc='matlab -nodesktop -nosplash'
+alias japanese='task add +japanese'
+alias systems='task add +systems'
+alias linear='task add +linear'
+alias discrete='task add +discrete'
 
 # Git add, commit, and push in one command
 lazygit() {
@@ -105,7 +109,21 @@ lazygit() {
 }
 
 lazytask() {
+    cd ~/gitrepos/notProgramming
     git add .
     git commit -a -m "tasks"
     git push
+    cd -
+}
+
+cherry() {
+    no_updates='nothing to commit, working tree clean'
+    old_dir=$(pwd)
+    for repo in ~/gitrepos/*; do
+        cd $repo
+        if [[ ! $(git status | grep $no_updates) ]]; then
+            echo $repo
+        fi
+    done
+    cd $old_dir
 }
