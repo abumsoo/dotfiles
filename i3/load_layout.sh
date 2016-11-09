@@ -7,8 +7,8 @@ i3-msg workspace 1
 sleep 1
 
 # i3-msg "workspace 10; append_layout ~/.i3/browser.json"
-(firefox &)
 i3-msg workspace 2
+(firefox &)
 sleep 3
 i3-msg workspace 1
 
