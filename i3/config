@@ -43,7 +43,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+apostrophe kill
 
 # Run rofi, dmenu replacement
-bindsym $mod+e exec rofi -show drun -width 1920 -location 0 -lines 10 -bw 0 -font "MonacoB 16" -padding 486 -separator-style none -opacity 55
+bindsym $mod+e exec rofi -show drun -width 1920 -location 0 -lines 10 -bw 0 -font "MonacoB 16" -padding 486 -separator-style none -opacity 70
 # start dmenu (a program launcher)
 # bindsym $mod+e exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
