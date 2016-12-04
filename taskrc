@@ -32,4 +32,3 @@ include /usr/share/doc/task/rc/dark-256.theme
 context.notWork=-work
 context.school=+japanese or +discrete or +systems or +linear
 context=notWork
-context.projects=+project

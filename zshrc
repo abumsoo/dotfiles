@@ -100,6 +100,7 @@ alias japanese='task add +japanese'
 alias systems='task add +systems'
 alias linear='task add +linear'
 alias discrete='task add +discrete'
+alias todo='task +D'
 
 # Git add, commit, and push in one command
 lazygit() {
@@ -109,11 +110,16 @@ lazygit() {
 }
 
 lazytask() {
-    cd ~/gitrepos/notProgramming
+    old_dir=$(pwd)
+    if [[ "$old_dir" != "$HOME/gitrepos/notProgramming" ]]; then
+        cd ~/gitrepos/notProgramming
+    fi
     git add .
     git commit -a -m "tasks"
     git push
-    cd -
+    if [[ "$old_dir" != "$HOME/gitrepos/notProgramming" ]]; then
+        cd -
+    fi
 }
 
 cherry() {
