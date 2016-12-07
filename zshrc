@@ -81,7 +81,7 @@ cherry() {
         fi
     done
     cd ~/dotfiles
-    if [[ !$(git status | grep $no_updates) ]]; then
+    if [[ ! $(git status | grep $no_updates) ]]; then
 	pwd
     fi
     cd $old_dir
