@@ -18,7 +18,7 @@ xrdb -load ~/.Xresources
 xrandr --output DVI-0 --right-of DVI-1
 
 # Start background
-systemctl --user start feh-wallpaper.service
+# systemctl --user start feh-wallpaper.service
 
 # Autostart Dropbox
 dropbox start
