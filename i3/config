@@ -236,6 +236,7 @@ bar {
     output DVI-0
     position top
     strip_workspace_numbers yes
+    tray_output DVI-1
     
     colors {
            background #000000
