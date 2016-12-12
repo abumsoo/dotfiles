@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Apparently this enables autocompletion
 autoload -Uz compinit
 compinit
@@ -5,6 +7,9 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+
+# Case insensitive auto completion
+
 
 # emacs mode
 bindkey -e
