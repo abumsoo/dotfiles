@@ -2,7 +2,7 @@
 
 # i3-msg "workspace 1; append_layout ~/.i3/text-edit.json"
 i3-msg workspace 1
-(emacsclient -c ~/gitrepos/notProgramming/goals.org &)
+(emacsclient -c ~/Dropbox/goals.org &)
 
 sleep 1
 
