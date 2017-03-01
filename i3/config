@@ -215,14 +215,14 @@ bindsym $mod+p mode "resize"
 bar {
     status_command $HOME/.config/conky-i3bar
     colors {
-           background #efefef
+           background #000000
            statusline #999999
-           separator  #55bbdd
+           separator  #5588dd
            #name              #outline   #background   #foreground
-           focused_workspace  #afafaf    #606060       #afafaf
-           active_workspace   #4f4f4f    #c1c1c1       #808080
-           inactive_workspace #5f5f5f    #efefef       #999999
-           urgent_workspace   #2f343a    #900000       #ffffff
+           focused_workspace  #afafaf    #505050       #afafaf
+           active_workspace   #4f4f4f    #404040       #a0a0a0
+           inactive_workspace #5f5f5f    #202020       #999999
+           urgent_workspace   #2f343a    #550000       #ffffff
     }
     # status_command i3status
     # position top
