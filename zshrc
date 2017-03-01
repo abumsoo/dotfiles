@@ -49,10 +49,13 @@ alias ec="emacsclient -n"
 alias matlabc='matlab -nodesktop -nosplash'
 # Taskwarrior aliases
 alias japanese='task add +japanese'
-alias systems='task add +systems'
-alias linear='task add +linear'
+alias software='task add +software'
+alias chem='task add +chem'
+alias chemlab='task add +chemlab'
 alias discrete='task add +discrete'
-alias todo='task +D'
+alias yltd='task +yltd'
+alias std='task +discrete or +chem or +chemlab or +japanese or +software'
+alias td='task -yltd'
 
 # Git add, commit, and push in one command
 lazygit() {
