@@ -53,9 +53,8 @@ alias software='task add +software'
 alias chem='task add +chem'
 alias chemlab='task add +chemlab'
 alias discrete='task add +discrete'
-alias yltd='task +yltd'
-alias std='task +discrete or +chem or +chemlab or +japanese or +software'
-alias td='task -yltd'
+alias td='task +discrete or +chem or +chemlab or +japanese or +software'
+alias aoeu='more ~/Dropbox/actions'
 
 # Git add, commit, and push in one command
 lazygit() {
