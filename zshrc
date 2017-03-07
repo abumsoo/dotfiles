@@ -37,7 +37,7 @@ bindkey '' backward-kill-dir
 eval $(keychain --eval --quiet id_rsa)
 
 # Prompt
-PROMPT=$'%m:%B%F{blue}%~ $(git_super_status) %f%b$ '
+PROMPT=$'%m:%B%F{blue}%~%f%b$(git_super_status)$ '
 
 # ALIASES
 # ls with colors
