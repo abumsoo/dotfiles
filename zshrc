@@ -10,6 +10,8 @@ SAVEHIST=1000
 
 # Case insensitive auto completion
 
+# Zsh git prompt
+source $HOME/dotfiles/zsh-git-prompt/zshrc.sh
 
 # emacs mode
 bindkey -e
@@ -35,12 +37,9 @@ bindkey '' backward-kill-dir
 eval $(keychain --eval --quiet id_rsa)
 
 # Prompt
-PROMPT=$'%K{cyan} %F{black}%n@%m%f %k%B%K{blue} %~ %k%b '
+PROMPT=$'%m:%B%F{blue}%~ $(git_super_status) %f%b$ '
 
-#
-# Aliases 
-#
-
+# ALIASES
 # ls with colors
 alias ls='ls --color=auto'
 # Emacs
