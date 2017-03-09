@@ -16,7 +16,7 @@ source $HOME/dotfiles/zsh-git-prompt/zshrc.sh
 # emacs mode
 bindkey -e
 
-#export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
