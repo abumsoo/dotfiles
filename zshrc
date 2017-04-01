@@ -44,7 +44,7 @@ PROMPT=$'%m:%B%F{blue}%~%f%b$(git_super_status)$ '
 alias ls='ls --color=auto'
 # Emacs
 alias ec="emacsclient -n"
-#matlab
+# matlab
 alias matlabc='matlab -nodesktop -nosplash'
 # Taskwarrior aliases
 alias japanese='task add +japanese'
@@ -53,7 +53,9 @@ alias chem='task add +chem'
 alias chemlab='task add +chemlab'
 alias discrete='task add +discrete'
 alias td='task +discrete or +chem or +chemlab or +japanese or +software'
+# 'grep'ing reminders out of text files
 alias aoeu='more ~/Dropbox/actions'
+alias morn='grep ^\+ ~/Dropbox/morning'
 
 # Git add, commit, and push in one command
 lazygit() {
