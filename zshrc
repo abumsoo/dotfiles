@@ -50,11 +50,9 @@ alias matlabc='matlab -nodesktop -nosplash'
 alias japanese='task add +japanese'
 alias software='task add +software'
 alias chem='task add +chem'
-alias chemlab='task add +chemlab'
 alias discrete='task add +discrete'
-alias td='task +discrete or +chem or +chemlab or +japanese or +software'
 # 'grep'ing reminders out of text files
-alias action='more ~/Dropbox/actions'
+alias actions='more ~/Dropbox/actions'
 alias morn='grep ^\+ ~/Dropbox/morning'
 
 # Git add, commit, and push in one command
