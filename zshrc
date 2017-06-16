@@ -51,7 +51,7 @@ alias chem='task add +chem'
 alias discrete='task add +discrete'
 # 'grep'ing reminders out of text files
 alias morn='grep ^\+ ~/Dropbox/morning.org'
-alias pmo='ec ~/Dropbox/writing/temp.org'
+alias think='ec ~/Dropbox/writing/temp.org'
 
 # Git add, commit, and push in one command
 lazygit() {
