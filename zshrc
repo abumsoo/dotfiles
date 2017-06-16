@@ -16,8 +16,6 @@ source $HOME/dotfiles/zsh-git-prompt/zshrc.sh
 # emacs mode
 bindkey -e
 
-export PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -52,8 +50,8 @@ alias software='task add +software'
 alias chem='task add +chem'
 alias discrete='task add +discrete'
 # 'grep'ing reminders out of text files
-alias actions='more ~/Dropbox/actions'
-alias morn='grep ^\+ ~/Dropbox/morning'
+alias morn='grep ^\+ ~/Dropbox/morning.org'
+alias pmo='ec ~/Dropbox/writing/temp.org'
 
 # Git add, commit, and push in one command
 lazygit() {

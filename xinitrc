@@ -18,7 +18,8 @@ xrdb -load ~/.Xresources
 xrandr --output DVI-0 --right-of DVI-1
 
 # Start background
-#systemctl --user start feh-wallpaper.service
+WALLPATH=/home/bumshakabum/Pictures/wallpapers/minimal
+feh --bg-scale "$(find ${WALLPATH} -type f|shuf|head -n 1)" --bg-scale "$(find ${WALLPATH}|shuf|head -n 1)"
 
 # Autostart Dropbox
 dropbox start
@@ -35,6 +36,6 @@ xset -dpms
 xset s noblank
 
 # Set keyboard layout to dvorak and switch caps and control
-setxkbmap -layout dvorak -option ctrl:swapcaps
+# setxkbmap -layout dvorak -option ctrl:swapcaps
 
 exec i3

@@ -254,7 +254,9 @@ bar {
 # for_window [class="URxvt"] floating enable
 
 # Autostarting programs
-exec --no-startup-id i3-msg "exec /home/bumshakabum/.i3/load_layout.sh"
+# exec --no-startup-id i3-msg "exec /home/bumshakabum/.i3/load_layout.sh"
+exec --no-startup-id i3-msg "workspace 1; exec firefox"
+exec --no-startup-id i3-msg "exec cd $HOME/gitrepos/notProgramming && git pull"
 
 # Start compton with config file in ~/.config/compton.conf
 exec_always --no-startup-id compton
