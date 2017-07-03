@@ -36,6 +36,10 @@ xset -dpms
 xset s noblank
 
 # Set keyboard layout to dvorak and switch caps and control
-setxkbmap -layout dvorak -option ctrl:swapcaps
+if [ $(id -un) = 'bumshakabum' ]; then
+    setxkbmap -layout dvorak -option ctrl:swapcaps
+else
+    setxkbmap -layout dvorak
+fi
 
 exec i3
