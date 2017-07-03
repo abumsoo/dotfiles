@@ -36,6 +36,6 @@ xset -dpms
 xset s noblank
 
 # Set keyboard layout to dvorak and switch caps and control
-# setxkbmap -layout dvorak -option ctrl:swapcaps
+setxkbmap -layout dvorak -option ctrl:swapcaps
 
 exec i3
