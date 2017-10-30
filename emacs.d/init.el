@@ -31,7 +31,7 @@
 (setq org-todo-keyword-faces
       '(("TODO" . org-warning) ("WAITING" . "orange")))
 ;; org-capture location
-(setq org-default-notes-file "~/Dropbox/tasks.org")
+(setq org-default-notes-file "~/Dropbox/org/tasks.org")
 ;; org-bullets cool bullet points!
 (require 'org-bullets)
 (add-hook'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -40,7 +40,7 @@
 ;; evil
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Make C-u scroll up
-(setq evil-want-C-u-scroll t)
+;; (setq evil-want-C-u-scroll t)
 (require 'evil)
 ;; evil mode
 (evil-mode 1)
@@ -52,7 +52,7 @@
 (key-chord-define evil-replace-state-map "jk" 'evil-normal-state)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Other sh..tuff
+;; Other
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Added themes directory to custom load path
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
@@ -74,8 +74,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/Dropbox/tasks.org")))
- '(package-selected-packages (quote (org-bullets uimage key-chord evil solarized-theme))))
+ '(org-agenda-files (quote ("~/Dropbox/org-todo/tasks.org")))
+ '(package-selected-packages (quote (org-bullets uimage key-chord evil solarized-theme)))
+ '(vc-follow-symlinks t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -83,4 +84,4 @@
  ;; If there is more than one, they won't work right.
  )
 
-(find-file "~/Dropbox/tasks.org")
+(find-file "~/Dropbox/org/tasks.org")
