@@ -32,6 +32,9 @@
       '(("TODO" . org-warning) ("WAITING" . "orange")))
 ;; org-capture location
 (setq org-default-notes-file "~/Dropbox/org/tasks.org")
+;; org-agenda files
+(setq org-agenda-files (quote ("~/Dropbox/org/tasks.org"
+			       "~/Dropbox/org/projects.org")))
 ;; org-bullets cool bullet points!
 (require 'org-bullets)
 (add-hook'org-mode-hook (lambda () (org-bullets-mode 1)))
