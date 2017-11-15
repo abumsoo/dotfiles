@@ -29,7 +29,9 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 ;; Set color of org todo 'states'
 (setq org-todo-keyword-faces
-      '(("TODO" . org-warning) ("WAITING" . "orange")))
+      '(("TODO" . org-warning)
+	("DONE" :foreground "forest green")
+	("WAITING" . "orange")))
 ;; org-capture location
 (setq org-default-notes-file "~/Dropbox/org/tasks.org")
 ;; org-agenda files
