@@ -15,7 +15,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; UI
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (menu-bar-mode -1)
+(menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
@@ -29,9 +29,14 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 ;; Set color of org todo 'states'
 (setq org-todo-keyword-faces
-      '(("TODO" . org-warning) ("WAITING" . "orange")))
+      '(("TODO" . org-warning)
+	("DONE" :foreground "forest green")
+	("WAITING" . "orange")))
 ;; org-capture location
-(setq org-default-notes-file "~/Dropbox/tasks.org")
+(setq org-default-notes-file "~/Dropbox/org/tasks.org")
+;; org-agenda files
+(setq org-agenda-files (quote ("~/Dropbox/org/tasks.org"
+			       "~/Dropbox/org/projects.org")))
 ;; org-bullets cool bullet points!
 (require 'org-bullets)
 (add-hook'org-mode-hook (lambda () (org-bullets-mode 1)))
