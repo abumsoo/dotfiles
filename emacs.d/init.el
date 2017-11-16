@@ -31,7 +31,7 @@
 (setq org-todo-keyword-faces
       '(("TODO" . org-warning) ("WAITING" . "orange")))
 ;; org-capture location
-(setq org-default-notes-file "~/Dropbox/org/tasks.org")
+(setq org-default-notes-file "~/Dropbox/tasks.org")
 ;; org-bullets cool bullet points!
 (require 'org-bullets)
 (add-hook'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -74,7 +74,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/Dropbox/org/tasks.org")))
+ '(org-agenda-files (quote ("~/Dropbox/tasks.org")))
  '(package-selected-packages (quote (org-bullets uimage key-chord evil solarized-theme)))
  '(vc-follow-symlinks t))
 (custom-set-faces
@@ -84,4 +84,4 @@
  ;; If there is more than one, they won't work right.
  )
 
-(find-file "~/Dropbox/org/tasks.org")
+(find-file "~/Dropbox/tasks.org")
