@@ -34,12 +34,21 @@
 	("WAITING" . "orange")))
 ;; org-capture location
 (setq org-default-notes-file "~/Dropbox/org/tasks.org")
+;; org-capture templates
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/Dropbox/org/tasks.org" "Tasks")
+	 "* TODO %?\n %T")
+	("n" "Notes" entry (file "~/Dropbox/org/notes.org")
+	 "* %?\n %i\n %T")))
 ;; org-agenda files
 (setq org-agenda-files (quote ("~/Dropbox/org/tasks.org"
 			       "~/Dropbox/org/projects.org")))
 ;; org-bullets cool bullet points!
 (require 'org-bullets)
 (add-hook'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(org-agenda nil "a")
+(find-file "~/Dropbox/org/tasks.org")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; evil
@@ -80,6 +89,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files (quote ("~/Dropbox/org/tasks.org")))
+ '(org-todo-keywords (quote ((sequence "TODO(t)" "DONE(d)"))))
  '(package-selected-packages (quote (org-bullets uimage key-chord evil solarized-theme)))
  '(vc-follow-symlinks t))
 (custom-set-faces
@@ -88,5 +98,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-(find-file "~/Dropbox/org/tasks.org")
