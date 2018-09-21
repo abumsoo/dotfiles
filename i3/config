@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono, Awesome 9
+font pango:DejaVu Sans Mono, Font Awesome 5 Free bold 9
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -117,23 +117,12 @@ new_float pixel 5
 hide_edge_borders both
 
 # Create gaps between windows
-gaps inner 10
+gaps inner 5
 # gaps outer 5
-# smart_gaps on
+smart_gaps on
 
 # i3lock shortcut with image
-bindsym $mod+shift+x exec /home/bumshakabum/.i3/lockScript
-
-# Assign workspace to specific screen
-workspace 1 output DVI-1
-workspace 2 output DVI-1
-workspace 3 output DVI-1
-# workspace 4 output DVI-1
-# workspace 5 output DVI-1
-workspace 10 output DVI-0
-workspace 7 output DVI-0
-workspace 8 output DVI-0
-workspace 9 output DVI-0
+bindsym $mod+shift+x exec i3lock -i $HOME/wallpapers/pngPapes/cityAtSunset.png
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -212,72 +201,58 @@ bindsym $mod+p mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-bar {
-    status_command i3status
-    output DVI-1
-    position top
-    separator_symbol " "
-    strip_workspace_numbers yes
-    tray_output DVI-1
+# bar # {
+    # # status_command i3status
+    # # position top
+    # # separator_symbol "|"
+    # # strip_workspace_numbers yes
     
-    colors {
-           background #000000
-           statusline #bbbbbb
-           separator  #5588dd
-           #name              #outline   #background   #foreground
-           focused_workspace  #afafaf    #505050       #afafaf
-           active_workspace   #4f4f4f    #404040       #a0a0a0
-           inactive_workspace #5f5f5f    #202020       #999999
-           urgent_workspace   #2f343a    #550000       #ffffff
-    }
-}
+    # # colors {
+    # #        background #000000
+    # #        statusline #bbbbbb
+    # #        separator  #5588dd
+    # #        #name              #outline   #background   #foreground
+    # #        focused_workspace  #afafaf    #505050       #afafaf
+    # #        active_workspace   #4f4f4f    #404040       #a0a0a0
+    # #        inactive_workspace #5f5f5f    #202020       #999999
+    # #        urgent_workspace   #2f343a    #550000       #ffffff
+    # # }
+# }
 
-bar {
-    output DVI-0
-    position top
-    strip_workspace_numbers yes
-    tray_output DVI-1
-    
-    colors {
-           background #000000
-           statusline #bbbbbb
-           separator  #5588dd
-           #name              #outline   #background   #foreground
-           focused_workspace  #afafaf    #505050       #afafaf
-           active_workspace   #4f4f4f    #404040       #a0a0a0
-           inactive_workspace #5f5f5f    #202020       #999999
-           urgent_workspace   #2f343a    #550000       #ffffff
-    }    
-}
 
 # Open terminals in floating mode
 # for_window [class="URxvt"] floating enable
 
 # Autostarting programs
 # exec --no-startup-id i3-msg "exec /home/bumshakabum/.i3/load_layout.sh"
-exec --no-startup-id i3-msg "workspace 1; exec firefox"
-exec --no-startup-id i3-msg "exec cd $HOME/gitrepos/notProgramming && git pull"
 
 # Start compton with config file in ~/.config/compton.conf
-exec_always --no-startup-id compton
+# exec_always --no-startup-id compton
 
 # exec --no-startup-id conky -c ~/.config/panel/empty_conky
 # exec --no-startup-id $HOME/.config/empty_bar
 # exec --no-startup-id $HOME/.config/lemonfoo
 
 # Autostart redshift
-exec --no-startup-id redshift-gtk
+# exec --no-startup-id redshift-gtk
+
+# Polybar launch
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #Pulse Audio controls
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +2.5% #increase sound volume
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -2.5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-# bindsym XF86AudioMute exec amixer -D pulse set Master toggle
+bindsym XF86AudioMute exec amixer -D pulse set Master toggle
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Media player controls
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioPause exec mpc stop
-bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPrev exec mpc prev
+# bindsym XF86AudioPlay exec mpc toggle
+# bindsym XF86AudioPause exec mpc stop
+# bindsym XF86AudioNext exec mpc next
+# bindsym XF86AudioPrev exec mpc prev
