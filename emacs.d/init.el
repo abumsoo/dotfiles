@@ -18,45 +18,26 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+;; Line numbers
+(when (version<= "26.0.50" emacs-version )
+  (global-display-line-numbers-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Ivy
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq ivy-count-format "(%d/%d) ")
+(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; org
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; The following lines are always needed
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-cb" 'org-iswitchb)
-;; Set color of org todo 'states'
-(setq org-todo-keyword-faces
-      '(("TODO" . org-warning)
-	("DONE" :foreground "forest green")
-	("WAITING" . "orange")))
-;; org-capture location
-(setq org-default-notes-file "~/Dropbox/org/tasks.org")
-;; org-capture refile targets
-(setq org-refile-targets '(("~/Dropbox/org/tasks.org")
-			   ("~/Dropbox/org/someday.org")))
-;; org-capture templates
-(setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/Dropbox/org/tasks.org" "Tasks")
-	 "* TODO %?\n %T")
-	("n" "Notes" entry (file "~/Dropbox/org/notes.org")
-	 "* %?\n %i\n %T")))
-;; org-agenda files
-(setq org-agenda-files '("~/Dropbox/org/tasks.org"
-			 "~/Dropbox/org/projects.org"))
 ;; org-bullets cool bullet points!
 (require 'org-bullets)
 (add-hook'org-mode-hook (lambda () (org-bullets-mode 1)))
-
-(org-agenda nil "a")
-;; (find-file "~/Dropbox/org/tasks.org")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; evil
@@ -90,19 +71,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Font
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;(set-default-font “DejaVu Sans Mono-9”)
-;;(set-fontset-font "fontset-default" "Font Awesome 5 Free:bold")
-
-;;(set-frame-parameter (selected-frame) 'alpha '(<active> . <inactive>))
-;;(set-frame-parameter (selected-frame) 'alpha <both>)
-(set-frame-parameter (selected-frame) 'alpha '(95 . 90))
-(add-to-list 'default-frame-alist '(alpha . (95 . 90)))
 
 ;; Set fill column to 80
 (setq-default fill-column 80)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Backup files
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; no backup files
-;; (setq make-backup-files nil)
+(setq backup-directory-alist `(("." . "~/.saves")))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -125,7 +102,7 @@
  '(org-todo-keywords (quote ((sequence "TODO(t)" "DONE(d)"))))
  '(package-selected-packages
    (quote
-    (zenburn-theme flymake-solidity solidity-mode projectile sbt-mode ein markdown-preview-mode markdown-mode scala-mode js2-mode ivy org-bullets uimage key-chord evil solarized-theme)))
+    (counsel doom-themes zenburn-theme flymake-solidity solidity-mode projectile sbt-mode ein markdown-preview-mode markdown-mode scala-mode js2-mode ivy org-bullets uimage key-chord evil solarized-theme)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
