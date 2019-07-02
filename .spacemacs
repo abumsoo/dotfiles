@@ -327,21 +327,15 @@ you should place your code here."
   (setq org-refile-targets '(("~/Sync/org/actions.org" :maxlevel . 3)
                              ("~/Sync/org/someday.org" :maxlevel . 1)
                              ("~/Sync/org/tickler.org" :maxlevel . 2)))
-  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+  (setq org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d)")
                             (sequence "WAITING(w)" "|" "CANCELLED(c)")))
-  (setq org-agenda-custom-commands '(("n" todo "NEXT"
-                                      ((org-agenda-overriding-header "Next Actions")))
-                                     ("d" "Agenda + Next Actions" ((agenda) (todo "NEXT")))))
+  (setq org-agenda-custom-commands '(("d" "Agenda + todos" ((agenda) (todo "TODO")))))
   (setq org-agenda-start-on-weekday nil)
   (setq org-agenda-ndays 7)
 
-  (global-set-key (kbd "\C-c c") 'org-capture)
-  (global-set-key (kbd "\C-c a") 'org-agenda)
-  (global-set-key (kbd "\C-c r") 'org-refile)
-
-  ;; (spacemacs/set-leader-keys "oa" 'org-agenda)
-  ;; (spacemacs/set-leader-keys "oc" 'org-capture)
-  ;; (spacemacs/set-leader-keys "or" 'org-refile)
+  (spacemacs/set-leader-keys "oa" 'org-agenda)
+  (spacemacs/set-leader-keys "oc" 'org-capture)
+  (spacemacs/set-leader-keys "or" 'org-refile)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
