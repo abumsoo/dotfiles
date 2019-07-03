@@ -329,7 +329,12 @@ you should place your code here."
                              ("~/Sync/org/tickler.org" :maxlevel . 2)))
   (setq org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d)")
                             (sequence "WAITING(w)" "|" "CANCELLED(c)")))
-  (setq org-agenda-custom-commands '(("d" "Agenda + todos" ((agenda) (todo "TODO")))))
+  (setq org-agenda-custom-commands '(("d" "Agenda + todos"
+                                      ((agenda)
+                                       (todo "TODO")))
+                                     ("o" "Office"
+                                      ((agenda)
+                                       (tags "@office")))))
   (setq org-agenda-start-on-weekday nil)
   (setq org-agenda-ndays 7)
 
