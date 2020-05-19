@@ -1,9 +1,6 @@
 [submodule "zsh-git-prompt"]
 	path = zsh-git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt.git
-[submodule ".emacs.d"]
-	path = .emacs.d
-	url = https://github.com/hlissner/doom-emacs
 [submodule ".config/rofi/rofi"]
 	path = .config/rofi/rofi
 	url = https://github.com/adi1090x/rofi.git
