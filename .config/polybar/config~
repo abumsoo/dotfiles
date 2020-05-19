@@ -1,0 +1,242 @@
+[settings]
+throttle-ms = 50
+throttle-limit = 5
+
+[bar/bumsBar]
+width = 100%
+height = 27
+offset-y = 0
+bottom = true
+
+background = #555f627a
+foreground = #f2f2f2
+
+overline-size = 2
+overline-color = #bc92f8
+underline-size = 2
+underline-color = #bc92f8
+
+spacing = 1
+padding-right = 2
+module-margin-left = 0
+module-margin-right = 0
+
+tray-position = right
+tray-padding = 2
+
+font-0 = NotoSans-Regular:size=8;1
+font-1 = FontAwesome:style=Regular:size=12;3
+font-2 = ypn envypn:size=11;3
+font-3 = Termsynu:size=8;1
+font-4 = Unifont:size=6;3
+
+modules-left = i3
+modules-center = xwindow
+modules-right = pulseaudio date powermenu
+
+[module/bspwm]
+type = internal/bspwm
+
+format = <label-state> <label-mode>
+
+label-active = %index%
+label-active-padding = 2
+label-active-margin = 1
+label-active-font = 3
+label-active-foreground = #fff
+label-active-background = #2fbbf2
+label-active-overline = #148ebe
+label-active-underline = #148ebe
+
+label-occupied = %index%
+label-occupied-padding = 2
+label-occupied-margin = 1
+label-occupied-background = #eeeeee
+label-occupied-foreground = #dd222222
+label-occupied-overline = #c5c5c5
+label-occupied-underline = #c5c5c5
+label-occupied-font = 3
+
+label-urgent = %index%
+label-urgent-padding = 2
+label-urgent-margin = 1
+label-urgent-font = 3
+
+label-empty = %index%
+label-empty-padding = 2
+label-empty-margin = 1
+label-empty-font = 3
+
+[module/i3]
+type = internal/i3
+
+format = <label-state> <label-mode>
+format-spacing = 0
+
+label-focused = %index%
+label-focused-padding = 5
+label-focused-margin = 1
+label-focused-background = #5F6155
+label-focused-foreground = #FFC857
+label-focused-underline = #FFC857
+label-focused-font = 3
+
+label-unfocused = %index%
+label-unfocused-padding = 5
+label-unfocused-margin = 1
+label-unfocused-foreground = #5F6155
+label-unfocused-background = #555f627a
+label-unfocused-font = 3
+
+label-urgent = %index%
+label-urgent-padding = 2
+label-urgent-margin = 1
+label-urgent-font = 3
+
+label-visible = %index%
+label-visible-padding = 2
+label-visible-margin = 1
+label-visible-font = 3
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+
+format = <label> <ramp-coreload>
+format-background = #66cc99
+format-foreground = #2a5c45
+format-underline = #60eaa5
+format-overline = #60eaa5
+format-padding = 2
+
+label = cpu
+label-font = 3
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 5
+ramp-coreload-0-foreground = #000000
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 5
+ramp-coreload-1-foreground = #000000
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 5
+ramp-coreload-2-foreground = #000000
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 5
+ramp-coreload-3-foreground = #000000
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 5
+ramp-coreload-4-foreground = #ffffff
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 5
+ramp-coreload-5-foreground = #ffffff
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 5
+ramp-coreload-6-foreground = #ff3b51
+ramp-coreload-7 = █
+ramp-coreload-7-font = 5
+ramp-coreload-7-foreground = #ff3b51
+
+[module/memory]
+type = internal/memory
+
+format = <label> <bar-used>
+format-padding = 2
+format-background = #cb66cc
+format-foreground = #000000
+format-underline = #e58de6
+format-overline = #e58de6
+
+label = memory
+label-font = 3
+
+bar-used-width = 10
+bar-used-indicator = |
+bar-used-indicator-font = 4
+bar-used-indicator-foreground = #ffaaf5
+bar-used-fill = ─
+bar-used-fill-font = 4
+bar-used-fill-foreground = #ffaaf5
+bar-used-empty = ─
+bar-used-empty-font = 4
+bar-used-empty-foreground = #934e94
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = " %m-%d"
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-padding = 4
+format-background = #4B3F72
+format-foreground = #FFC857
+
+label = %date%  %time%
+label-font = 3
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 3
+format-volume-background = #19647E
+format-volume-foreground = #37392E
+label-volume = %percentage%
+label-volume-foreground = #FFC857
+label-volume-font = 3
+
+format-muted = <label-muted>
+format-muted-padding = 2
+format-muted-background = #19647E
+format-muted-foreground = #FFC857
+label-muted =  %percentage%
+label-muted-foreground = #FFC857
+label-muted-font = 3
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+ramp-volume-foreground = #FFC857
+
+click-middle = "pavucontrol >/dev/null 2>&1 &"
+
+
+[module/xwindow]
+type = internal/xwindow
+label-font = 3
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-padding = 4
+
+label-font = 3
+label-open-font = 3
+label-open = 
+label-open-foreground = #FFC857
+label-close = cancel
+label-close-foreground = #FFC857
+label-separator = |
+label-separator-foreground = #FFC857
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+
+; vim:ft=dosini
