@@ -25,7 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-solarized-light)
+(setq doom-theme 'doom-solarized-dark)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -71,8 +71,9 @@
 (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
 ;; org-agenda
-(setq org-agenda-files
-      '("~/Sync/org/tasks/tasks.org" "~/Sync/org/projects/ideas.org"))
+(setq org-agenda-files (list "~/Sync/org/tasks/tasks.org"
+                             "~/Sync/org/projects/ideas.org"
+                             "~/Sync/org/projects/projects.org"))
 
 ;; org-refile
 ;; Show full paths for refiling
