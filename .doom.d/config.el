@@ -25,7 +25,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-solarized-light)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -67,8 +67,26 @@
   `(org-level-8 :font "Roboto" :weight bold)
   `(org-document-title :foreground ,(face-foreground 'default) :height 1.3 :underline nil))
 
+;; keywords
+(setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+
+;; org-agenda
+(setq org-agenda-files
+      '("~/Sync/org/tasks/tasks.org" "~/Sync/org/projects/ideas.org"))
+
+;; org-refile
+;; Show full paths for refiling
+(setq org-refile-use-outline-path t)
+
+;; org-capture
+;; basic task template
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/Sync/org/tasks/tasks.org" "Tasks")
+         "* TODO %?\n  %i\n")))
+
 ;; disable line numbers in writeroom-mode
 (add-hook 'writeroom-mode-hook (lambda () (display-line-numbers-mode 0)))
+(add-hook 'writeroom-mode-hook (lambda () (hl-line-mode 0)))
 
 (setq org-hide-emphasis-markers t)
 
@@ -76,7 +94,8 @@
 ;; default journal directory
 (customize-set-variable 'org-journal-dir "~/Sync/org/journal/")
 ;; buffer-specific header format
-(customize-set-variable 'org-journal-date-format "%A - %B %d, %Y - %I:%M %P")
+(customize-set-variable 'org-journal-date-format "%A, %B %d %Y")
+(customize-set-variable 'org-journal-time-format "%I:%M %P")
 ;; file title format
 (customize-set-variable 'org-journal-file-format "%Y-%m-%d")
 ;; don't open new window for editing entry
