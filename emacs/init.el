@@ -114,6 +114,66 @@
   (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
   (key-chord-mode 1))
 
+(use-package org-roam
+  :straight t
+  :bind
+  ("C-c n f" . org-roam-node-find)
+  ("C-c n d" . org-roam-dailies-find-today)
+  :config
+  (setq org-roam-directory (file-truename "~/org/roam"))
+  (org-roam-db-autosync-mode)
+  (setq org-roam-dailies-directory "daily/")
+  (setq org-roam-dailies-capture-templates
+      '(("d" "default" entry
+         "* %?"
+         :target (file+head "%<%Y-%m-%d>.org"
+                            "#+title: %<%Y-%m-%d>\n")))))
+
+(use-package org
+  :bind
+  ("C-c a" .  (lambda () (interactive) (org-agenda nil "a")))
+  ("C-c c" .  (lambda () (interactive) (org-capture nil "t")))
+  ("C-c q" .  org-set-tags-command)
+  :config
+  (setq org-agenda-files (list "~/org/tasks.org"))
+  (setq org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled)
+  (setq org-capture-templates
+	'(("t" "Todo" entry (file "~/org/tasks.org")
+           "* TODO %?\n %a")))
+  (setq org-tag-alist
+	'(;; context
+          ("looseleaf" . ?l)
+	  ;; Activities
+          ("planning" . ?p)
+          ("code" . ?c)
+          ("screenplay" . ?s)
+          ("errand" . ?r)))
+  (setq org-agenda-custom-commands
+        '(("a" "My Weekly Agenda"
+           ((agenda "" nil)
+            (todo "" nil))
+           nil)))
+  (setq org-agenda-prefix-format
+	'((agenda . " %i %?-12t% s")
+	  (todo . " %i")
+	  (tags . " %i %-12:c")
+	  (search . " %i %-12:c"))))
+
+(use-package writeroom-mode
+  :straight t
+  :hook org-mode)
+
+(add-hook 'prog-mode-hook 'electric-pair-mode)
+;; (add-hook 'prog-mode-hook 'eglot-ensure)
+
+(add-hook 'org-mode-hook 'visual-line-mode)
+(add-hook 'org-mode-hook 'variable-pitch-mode)
+
+(use-package which-key
+  :straight t
+  :config
+  (which-key-mode))
+
 (setq treesit-language-source-alist
    '((bash "https://github.com/tree-sitter/tree-sitter-bash")
      (c "https://github.com/tree-sitter/tree-sitter-c")
@@ -137,32 +197,6 @@
       '((c++-mode . c++-ts-mode)
 	(c-mode . c-ts-mode)))
 
-(use-package org-roam
-  :straight t
-  :bind
-  ("C-c n f" . org-roam-node-find)
-  ("C-c n d" . org-roam-dailies-find-today)
-  :config
-  (setq org-roam-directory (file-truename "~/org/roam"))
-  (org-roam-db-autosync-mode)
-  (setq org-roam-dailies-directory "daily/")
-  (setq org-roam-dailies-capture-templates
-	'(("d" "default" entry
-	   "* %?"
-	   :target (file+head "%<%Y-%m-%d>.org"
-			      "#+title: %<%Y-%m-%d>\n")))))
-
-(use-package writeroom-mode
+(use-package org-superstar
   :straight t
   :hook org-mode)
-
-(add-hook 'prog-mode-hook 'electric-pair-mode)
-(add-hook 'prog-mode-hook 'eglot-ensure)
-
-(add-hook 'org-mode-hook 'visual-line-mode)
-(add-hook 'org-mode-hook 'variable-pitch-mode)
-
-(use-package which-key
-  :straight t
-  :config
-  (which-key-mode))
